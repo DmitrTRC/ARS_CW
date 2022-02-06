@@ -10,7 +10,8 @@ class Circle:
         self.center = coord
 
     def __str__(self):
-        return "Circle with center at ({}, {}) and radius {}".format(self.center.x, self.center.y, self.radius)
+        return "Circle with center at ({}, {}) and radius {}".format(self.center.x, self.center.y,
+                                                                     round(self.radius, 6))
 
 
 def get_distance(p1, p2):
@@ -30,52 +31,17 @@ def get_two_circle(points):
         circles.
     """
 
-    # Sort points by x
-    points.sort(key=lambda x: x.x)
-    # Sort points by y
-    points.sort(key=lambda x: x.y)
-
-    # Initialize the first circle
-    circle1 = Circle(points[0], 0)
-    # Initialize the second circle
-    circle2 = Circle(points[1], 0)
-
-    # Iterate over the points
-    for i in range(2, len(points)):
-        # Get the current point
-        p = points[i]
-        # Get the distance between the current point and the center of the first circle
-        d1 = get_distance(p, c1.center)
-        # Get the distance between the current point and the center of the second circle
-        d2 = get_distance(p, c2.center)
-        # If the distance between the current point and the center of the first circle is smaller than the distance
-        # between the current point and the center of the second circle
-        if d1 < d2:
-            # Update the radius of the first circle
-            c1.radius = max(c1.radius, d1)
-        # If the distance between the current point and the center of the first circle is greater than the distance
-        # between the current point and the center of the second circle
-        else:
-            # Update the radius of the second circle
-            c2.radius = max(c2.radius, d2)
-
-    # Return the two circles
-    return c1, c2
 
 
 if __name__ == '__main__':
     points_array = [
+        Coord(-1, -1),
         Coord(0, 0),
-        Coord(1, 0),
-        Coord(0, 1),
-        Coord(1, 1),
-        Coord(0.5, 0.5),
-        Coord(0.5, 1.5),
-        Coord(1.5, 0.5),
-        Coord(1.5, 1.5),
+        Coord(4, 4),
         Coord(10, 7),
         Coord(10, 8),
         Coord(5, 9),
+        Coord(15, 7),
 
         ]
 
