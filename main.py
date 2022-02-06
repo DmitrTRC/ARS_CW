@@ -30,7 +30,7 @@ def get_two_circle(points):
         points are inside the
         circles.
     """
-
+    pass
 
 
 if __name__ == '__main__':
