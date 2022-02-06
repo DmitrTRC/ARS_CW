@@ -25,10 +25,9 @@ def get_distance(p1, p2):
 
 def get_two_circle(points):
     """
-        Points : Array of coordinates
-        Find two circles with center in the points array and minimum radius for bigger circle, so that all other
-        points are inside the
-        circles.
+        points : array of Coord
+        Calculate the two circles that center in points, and cover all points with minimal radiuses
+        Return a tuple (c1, c2) where c1 is the first circle, and c2 is the second circle
     """
     pass
 
