@@ -17,7 +17,7 @@ class Circle:
     def __str__(self):
         return "Circle with center at ({}, {}) and radius {}".format(
             self.center.x, self.center.y, round(self.radius, 6)
-        )
+            )
 
 
 def get_distance(p1, p2):
@@ -43,7 +43,7 @@ def draw_result(coord_array, circle1, circle2):
         [coord.y for coord in coord_array],
         color="b",
         label="Points",
-    )
+        )
     # Draw circle1
     plt.gca().add_patch(
         plt.Circle(
@@ -52,8 +52,8 @@ def draw_result(coord_array, circle1, circle2):
             color="r",
             fill=False,
             label=f"Circle 1 :  R={circle1.radius},  Center:  X={circle1.center.x}, Y={circle1.center.y}",
+            )
         )
-    )
 
     # Draw circle2
     plt.gca().add_patch(
@@ -63,8 +63,8 @@ def draw_result(coord_array, circle1, circle2):
             color="g",
             fill=False,
             label=f"Circle 2 :  R={circle2.radius},  Center:  X={circle2.center.x}, Y={circle2.center.y}",
+            )
         )
-    )
 
     plt.xlabel("X")
     plt.ylabel("Y")
@@ -89,7 +89,7 @@ if __name__ == "__main__":
         Coord(2, 2),
         Coord(3, -5),
         Coord(4, 4),
-    ]
+        ]
 
     c1 = Circle(Coord(1, 1), 3)
     c2 = Circle(Coord(3, 3), 2)
@@ -101,3 +101,4 @@ if __name__ == "__main__":
         print(f"point :  ({point.x}, {point.y})")
 
     # draw_result(points_array, c1, c2)
+    draw_result(sorted_points, c1, c2)
