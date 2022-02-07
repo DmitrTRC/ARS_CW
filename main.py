@@ -51,7 +51,7 @@ def draw_result(coord_array, circle1, circle2):
             circle1.radius,
             color="r",
             fill=False,
-            label=f"Circle 1 :  R={circle1.radius},  Center:  X={circle1.center.x}, Y={circle1.center.y}"
+            label=f"Circle 1 :  R={circle1.radius},  Center:  X={circle1.center.x}, Y={circle1.center.y}",
         )
     )
 
@@ -62,7 +62,7 @@ def draw_result(coord_array, circle1, circle2):
             circle2.radius,
             color="g",
             fill=False,
-            label=f"Circle 2 :  R={circle2.radius},  Center:  X={circle2.center.x}, Y={circle2.center.y}"
+            label=f"Circle 2 :  R={circle2.radius},  Center:  X={circle2.center.x}, Y={circle2.center.y}",
         )
     )
 
@@ -73,10 +73,21 @@ def draw_result(coord_array, circle1, circle2):
     plt.show()
 
 
+def get_sorted_points(coord_array):
+    """
+    coord_array : array of Coord
+    Return the array sorted by the distance between the point and the center of the circle
+    """
+    return sorted(coord_array, key=lambda coord: (coord.x, coord.y))
+
+
 if __name__ == "__main__":
     points_array = [
+        Coord(-4, -7),
+        Coord(5, 3),
         Coord(0, 0),
         Coord(2, 2),
+        Coord(3, -5),
         Coord(4, 4),
     ]
 
@@ -84,4 +95,9 @@ if __name__ == "__main__":
     c2 = Circle(Coord(3, 3), 2)
 
     print(c1, c2, sep="\n")
-    draw_result(points_array, c1, c2)
+    sorted_points = get_sorted_points(points_array)
+
+    for point in sorted_points:
+        print(f"point :  ({point.x}, {point.y})")
+
+    # draw_result(points_array, c1, c2)
