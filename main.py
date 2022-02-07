@@ -1,4 +1,3 @@
-from cProfile import label
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -37,7 +36,7 @@ def draw_result(coord_array, circle1, circle2):
     Plot coord_array
     Draw circle1, circle2
     """
-    plt.figure(figsize=(10, 10))
+    plt.figure(figsize=(20, 20))
     plt.scatter(
         [coord.x for coord in coord_array],
         [coord.y for coord in coord_array],
