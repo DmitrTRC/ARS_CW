@@ -1,6 +1,8 @@
 from cProfile import label
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 import numpy as np
+
+
 class Coord:
     def __init__(self, x, y):
         self.x = x
@@ -26,56 +28,51 @@ def get_distance(p1, p2):
     """
     return ((p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2) ** 0.5
 
-    
+
 def draw_result(coord_array, circle1, circle2):
     """
     coord_array : array of Coord
     circle1, circle2 : Circle
-    
+
     Plot coord_array
-    Draw circle1, circle2  
+    Draw circle1, circle2
     """
     plt.figure(figsize=(10, 10))
     plt.scatter(
         [coord.x for coord in coord_array],
         [coord.y for coord in coord_array],
-        color='b',
-        label='Points'
+        color="b",
+        label="Points",
     )
     # Draw circle1
     plt.gca().add_patch(
         plt.Circle(
             (circle1.center.x, circle1.center.y),
             circle1.radius,
-            color='r',
+            color="r",
             fill=False,
-            label = 'Circle 1'
+            label=f"Circle 1 :  R={circle1.radius},  Center:  X={circle1.center.x}, Y={circle1.center.y}"
         )
     )
-      
-    
+
     # Draw circle2
     plt.gca().add_patch(
         plt.Circle(
             (circle2.center.x, circle2.center.y),
             circle2.radius,
-            color='g',
+            color="g",
             fill=False,
-            label = 'Circle 2'
+            label=f"Circle 2 :  R={circle2.radius},  Center:  X={circle2.center.x}, Y={circle2.center.y}"
         )
     )
-    
-    plt.xlabel('X')
-    plt.ylabel('Y')
-    plt.title('Points covered by the two circles')
+
+    plt.xlabel("X")
+    plt.ylabel("Y")
+    plt.title("Points covered by the two circles")
     plt.legend()
     plt.show()
-    
-    
-    
-    
-    
-    
+
+
 if __name__ == "__main__":
     points_array = [
         Coord(0, 0),
@@ -84,7 +81,7 @@ if __name__ == "__main__":
     ]
 
     c1 = Circle(Coord(1, 1), 3)
-    c2  = Circle(Coord(3, 3), 2)
+    c2 = Circle(Coord(3, 3), 2)
 
     print(c1, c2, sep="\n")
     draw_result(points_array, c1, c2)
