@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-class Coord:
+class Point:
     def __init__(self, x, y):
         self.x = x
         self.y = y
@@ -82,16 +82,16 @@ def get_sorted_points(coord_array):
 
 if __name__ == "__main__":
     points_array = [
-        Coord(-4, -7),
-        Coord(5, 3),
-        Coord(0, 0),
-        Coord(2, 2),
-        Coord(3, -5),
-        Coord(4, 4),
+        Point(-4, -7),
+        Point(5, 3),
+        Point(0, 0),
+        Point(2, 2),
+        Point(3, -5),
+        Point(4, 4),
         ]
 
-    c1 = Circle(Coord(1, 1), 3)
-    c2 = Circle(Coord(3, 3), 2)
+    c1 = Circle(Point(1, 1), 3)
+    c2 = Circle(Point(3, 3), 2)
 
     print(c1, c2, sep="\n")
     sorted_points = get_sorted_points(points_array)
