@@ -80,14 +80,7 @@ def get_sorted_points(coord_array):
     return sorted(coord_array, key=lambda coord: (coord.x, coord.y))
 
 
-# def split_points_set(coord_array):
-#     # Split the array in median and the two others
-#     median = len(coord_array) // 2
-#     left = coord_array[:median]
-#     right = coord_array[median:]
-#     return set(left), set(right)
-
-def find_center_point ( coord_array ):
+def find_center_point(coord_array):
     """
     coord_array : array of Coord
     Return the center of the array
@@ -98,6 +91,22 @@ def find_center_point ( coord_array ):
         x_sum += coord.x
         y_sum += coord.y
     return Point(x_sum / len(coord_array), y_sum / len(coord_array))
+
+
+def split_set_by_point(coord_array, point):
+    """
+    coord_array : array of Coord
+    point : Coord
+    Return the array of the points on the left and the right of the point
+    """
+    left = []
+    right = []
+    for coord in set(coord_array):
+        if get_distance(coord, point) < point.x:
+            left.append(coord)
+        else:
+            right.append(coord)
+    return left, right
 
 
 if __name__ == "__main__":
@@ -128,4 +137,3 @@ if __name__ == "__main__":
 
     for point in right:
         print(f"Right point :  ({point.x}, {point.y})")
-
