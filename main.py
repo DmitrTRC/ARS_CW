@@ -41,8 +41,8 @@ def cover_by_circles(coord_array):
     print(f"Center point: {center_point}")
 
     left, right = split_set_by_point(coord_array, center_point)
-    print(f"Left: {left}")
-    print(f"Right: {right}")
+    print_vector("Left", left)
+    print_vector("Right", right)
 
     v_left_center_point = find_center_point(left)  # Find Virtual Center Point of the left set
     print(f"Virtual Center Point of the left set: {v_left_center_point}")
@@ -62,6 +62,12 @@ def cover_by_circles(coord_array):
                                 right_center_point)  # Find the radius of the right circle
 
     return Circle(left_center_point, left_radius), Circle(right_center_point, right_radius)
+
+
+def print_vector(name, vector):
+    print(f"{name} : ")
+    for point in vector:
+        print(point)
 
 
 def draw_result(coord_array, circle1, circle2):
@@ -138,7 +144,7 @@ def split_set_by_point(coord_array, point):
     left = []
     right = []
     for coord in set(coord_array):
-        if get_distance(coord, point) < point.x:
+        if coord.x < point.x:
             left.append(coord)
         else:
             right.append(coord)
