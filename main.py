@@ -6,9 +6,16 @@ class Point:
     def __init__(self, x, y):
         self.x = x
         self.y = y
+        self.name = 'p' + str(x) + ', ' + str(y)
+
+    def set_name(self, name):
+        self.name = name
+
+    def get_name(self):
+        return self.name
 
     def __str__(self):
-        return "({}, {})".format(self.x, self.y)
+        return "({}, {}, {})".format(self.name, self.x, self.y)
 
 
 class Circle:
@@ -37,31 +44,47 @@ def cover_by_circles(coord_array):
     coord_array : array of Coord
     Return the two circles that cover the points
     """
+    aux_points = []
+
     center_point = find_center_point(coord_array)
+    center_point.set_name("Center")
+
     print(f"Center point: {center_point}")
+    aux_points.append(center_point)
 
     left, right = split_set_by_point(coord_array, center_point)
     print_vector("Left", left)
     print_vector("Right", right)
 
     v_left_center_point = find_center_point(left)  # Find Virtual Center Point of the left set
+    v_left_center_point.set_name("V_Left_Center")
     print(f"Virtual Center Point of the left set: {v_left_center_point}")
+    aux_points.append(v_left_center_point)
+
     v_right_center_point = find_center_point(right)  # Find Virtual Center Point of the right set
+    v_right_center_point.set_name("V_Right_Center")
     print(f"Virtual Center Point of the right set: {v_right_center_point}")
+    aux_points.append(v_right_center_point)
 
     left_center_point = find_nearest_point(left, v_left_center_point)  # Find the nearest point to the virtual center
+    left_center_point.set_name("Left_Center")
     # point of the left set
     print(f"Left Center Point: {left_center_point}")
-    right_center_point = find_nearest_point(right, v_right_center_point)  # Find the nearest point to the virtual
+    aux_points.append(left_center_point)
+
+    right_center_point = find_nearest_point(right, v_right_center_point)
+    right_center_point.set_name("Right_Center")
+    # Find the nearest point to the virtual
     # center point of the right set
     print(f"Right Center Point: {right_center_point}")
+    aux_points.append(right_center_point)
 
     left_radius = get_distance(find_far_point(left, left_center_point),
                                left_center_point)  # Find the radius of the left circle
     right_radius = get_distance(find_far_point(right, right_center_point),
                                 right_center_point)  # Find the radius of the right circle
 
-    return Circle(left_center_point, left_radius), Circle(right_center_point, right_radius)
+    return Circle(left_center_point, left_radius), Circle(right_center_point, right_radius), aux_points
 
 
 def print_vector(name, vector):
@@ -70,7 +93,7 @@ def print_vector(name, vector):
         print(point)
 
 
-def draw_result(coord_array, circle1, circle2):
+def draw_result(coord_array, circle1, circle2, auxiliary_points):
     """
     coord_array : array of Coord
     circle1, circle2 : Circle
@@ -85,6 +108,9 @@ def draw_result(coord_array, circle1, circle2):
         color="b",
         label="Points",
         )
+    for point in coord_array:
+        plt.annotate(point.name, (point.x, point.y))
+        plt.scatter(point.x, point.y, color="r", label="Auxiliary Points")
     # Draw circle1
     plt.gca().add_patch(
         plt.Circle(
@@ -106,20 +132,21 @@ def draw_result(coord_array, circle1, circle2):
             label=f"Circle 2 :  R={circle2.radius},  Center:  X={circle2.center.x}, Y={circle2.center.y}",
             )
         )
+    if auxiliary_points:
+        plt.scatter(
+            [point.x for point in auxiliary_points],
+            [point.y for point in auxiliary_points],
+            color="m",
+            label="Auxiliary Points",
+            )
+        for point in auxiliary_points:
+            plt.annotate(point.name, (point.x, point.y))
 
     plt.xlabel("X")
     plt.ylabel("Y")
     plt.title("Points covered by the two circles")
     plt.legend()
     plt.show()
-
-
-# def get_sorted_points(coord_array):
-#     """
-#     coord_array : array of Coord
-#     Return the array sorted by the distance between the point and the center of the circle
-#     """
-#     return sorted(coord_array, key=lambda coord: (coord.x, coord.y))
 
 
 def find_center_point(coord_array):
@@ -146,8 +173,10 @@ def split_set_by_point(coord_array, point):
     for coord in set(coord_array):
         if coord.x < point.x:
             left.append(coord)
+            coord.name = "Left P"
         else:
             right.append(coord)
+            coord.name = "Right P"
     return left, right
 
 
@@ -189,7 +218,12 @@ if __name__ == "__main__":
         Point(8, 8),
         ]
 
-    c1, c2 = cover_by_circles(points_array_1)
-print(c1, c2)
+    # c1, c2 = cover_by_circles(points_array_1)
+    # print(c1, c2)
+    #
+    # draw_result(points_array_1, c1, c2)
 
-draw_result(points_array_1, c1, c2)
+    test_array = points_array
+    c1, c2, aux = cover_by_circles(test_array)
+    print(c1, c2)
+    draw_result(test_array, c1, c2, aux)
