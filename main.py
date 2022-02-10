@@ -80,6 +80,14 @@ def get_sorted_points(coord_array):
     return sorted(coord_array, key=lambda coord: (coord.x, coord.y))
 
 
+def split_points_set(coord_array):
+    # Split the array in median and the two others
+    median = len(coord_array) // 2
+    left = coord_array[:median]
+    right = coord_array[median:]
+    return set(left), set(right)
+
+
 if __name__ == "__main__":
     points_array = [
         Point(-4, -7),
@@ -101,3 +109,11 @@ if __name__ == "__main__":
 
     # draw_result(points_array, c1, c2)
     draw_result(sorted_points, c1, c2)
+
+    left, right = split_points_set(sorted_points)
+    for point in left:
+        print(f"Left point :  ({point.x}, {point.y})")
+
+    for point in right:
+        print(f"Right point :  ({point.x}, {point.y})")
+
