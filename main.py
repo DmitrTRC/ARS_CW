@@ -171,7 +171,7 @@ def split_set_by_point(coord_array, point):
     left = []
     right = []
     for coord in set(coord_array):
-        if coord.x < point.x:
+        if coord.x < point.x or coord.y < point.y:
             left.append(coord)
             coord.name = "Left P"
         else:
@@ -223,7 +223,7 @@ if __name__ == "__main__":
     #
     # draw_result(points_array_1, c1, c2)
 
-    test_array = points_array
+    test_array = points_array_1
     c1, c2, aux = cover_by_circles(test_array)
     print(c1, c2)
     draw_result(test_array, c1, c2, aux)
