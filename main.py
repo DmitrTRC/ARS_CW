@@ -1,9 +1,14 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+from itertools import count
+
 
 class Point:
+    _ids = count(0)
+
     def __init__(self, x, y):
+        self.id = next(self._ids)  # Increase id counter
         self.x = x
         self.y = y
         self.name = 'p' + str(x) + ', ' + str(y)
@@ -15,7 +20,7 @@ class Point:
         return self.name
 
     def __str__(self):
-        return "({}, {}, {})".format(self.name, self.x, self.y)
+        return "({} {}, {})".format(self.name, self.x, self.y)
 
 
 class Circle:
