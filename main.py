@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 
 from itertools import count
 
@@ -25,9 +24,9 @@ class Point:
 
 class Circle:
 
-    def __init__(self, coord, radius):
+    def __init__(self, center_point, radius):
         self.radius = radius
-        self.center = coord
+        self.center = center_point
 
     def __str__(self):
         return "Circle with center at ({}, {}) and radius {}".format(
@@ -44,20 +43,20 @@ def get_distance(p1, p2):
     return ((p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2) ** 0.5
 
 
-def cover_by_circles(coord_array):
+def cover_by_circles(point_array):
     """
-    coord_array : array of Coord
+    point_array : array of Coord
     Return the two circles that cover the points
     """
     aux_points = []
 
-    center_point = find_center_point(coord_array)
+    center_point = find_center_point(point_array)
     center_point.set_name("Center")
 
     print(f"Center point: {center_point}")
     aux_points.append(center_point)
 
-    left, right = split_set_by_point(coord_array, center_point)
+    left, right = split_set_by_point(point_array, center_point)
     print_vector("Left", left)
     print_vector("Right", right)
 
@@ -100,10 +99,10 @@ def print_vector(name, vector):
 
 def draw_result(coord_array, circle1, circle2, auxiliary_points):
     """
-    coord_array : array of Coord
+    point_array : array of Coord
     circle1, circle2 : Circle
 
-    Plot coord_array
+    Plot point_array
     Draw circle1, circle2
     """
     plt.figure(figsize=(20, 20))
@@ -156,7 +155,7 @@ def draw_result(coord_array, circle1, circle2, auxiliary_points):
 
 def find_center_point(coord_array):
     """
-    coord_array : array of Coord
+    point_array : array of Coord
     Return the center of the array
     """
     x_sum = 0
@@ -169,7 +168,7 @@ def find_center_point(coord_array):
 
 def split_set_by_point(coord_array, point):
     """
-    coord_array : array of Coord
+    point_array : array of Coord
     point : Coord
     Return the array of the points on the left and the right of the point
     """
@@ -187,7 +186,7 @@ def split_set_by_point(coord_array, point):
 
 def find_nearest_point(coord_array, point):
     """
-    coord_array : array of Coord
+    point_array : array of Coord
     point : Coord
     Return the nearest point to the point
     """
@@ -196,7 +195,7 @@ def find_nearest_point(coord_array, point):
 
 def find_far_point(coord_array, point):
     """
-    coord_array : array of Coord
+    point_array : array of Coord
     point : Coord
     Return the farthest point to the point
     """
@@ -223,12 +222,7 @@ if __name__ == "__main__":
         Point(8, 8),
         ]
 
-    # c1, c2 = cover_by_circles(points_array_1)
-    # print(c1, c2)
-    #
-    # draw_result(points_array_1, c1, c2)
-
-    test_array = points_array
+    test_array = points_array_1
     c1, c2, aux = cover_by_circles(test_array)
     print(c1, c2)
     draw_result(test_array, c1, c2, aux)
