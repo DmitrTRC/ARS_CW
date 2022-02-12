@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 
 from itertools import count
+from functools import reduce
 
 
 class Point:
@@ -158,11 +159,14 @@ def find_center_point(coord_array):
     point_array : array of Coord
     Return the center of the array
     """
-    x_sum = 0
-    y_sum = 0
-    for coord in coord_array:
-        x_sum += coord.x
-        y_sum += coord.y
+    x_sum = reduce(lambda x, y: x + y.x, coord_array, 0)
+    y_sum = reduce(lambda x, y: x + y.y, coord_array, 0)
+
+    # x_sum = 0
+    # y_sum = 0
+    # for coord in coord_array:
+    #     x_sum += coord.x
+    #     y_sum += coord.y
     return Point(x_sum / len(coord_array), y_sum / len(coord_array))
 
 
