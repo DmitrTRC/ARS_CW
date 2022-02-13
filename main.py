@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 from itertools import count
-from functools import reduce
+
 
 
 class Point:
