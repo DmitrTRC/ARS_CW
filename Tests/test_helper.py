@@ -1,8 +1,5 @@
 from logic import helper as h
 
 
-class TesHelper:
-
-    def test_get_distance(self):
-        pass
-        
+def test_get_distance():
+    assert 0 == 0
