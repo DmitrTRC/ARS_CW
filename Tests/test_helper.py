@@ -1,5 +1,5 @@
-from logic import helper as h
+from helper.helper import *
 
 
 def test_get_distance():
-    assert 0 == 0
+    assert False
