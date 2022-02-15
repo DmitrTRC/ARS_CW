@@ -11,7 +11,7 @@ class Point:
         self.y = y
 
     def __str__(self):
-        return '(P{} : {}, {})'.format(self.id, self.x, self.y)
+        return '(P {}, {})'.format(self.x, self.y)
 
 
 class Circle:
