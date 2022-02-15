@@ -11,7 +11,7 @@ class Point:
         self.y = y
 
     def __str__(self):
-        return '(P {} {}, {})'.format(self.id, self.x, self.y)
+        return '(P{} : {}, {})'.format(self.id, self.x, self.y)
 
 
 class Circle:
@@ -50,14 +50,13 @@ def cover_by_circles(point_array):
     left_center_point = find_nearest_point(left, v_left_center_point)  # Find the nearest point to the virtual center
 
     right_center_point = find_nearest_point(right, v_right_center_point)
-    right_center_point.set_name("Right_Center")
 
     left_radius = get_distance(find_far_point(left, left_center_point),
                                left_center_point)  # Find the radius of the left circle
     right_radius = get_distance(find_far_point(right, right_center_point),
                                 right_center_point)  # Find the radius of the right circle
 
-    return Circle(left_center_point, left_radius), Circle(right_center_point, right_radius), aux_points
+    return Circle(left_center_point, left_radius), Circle(right_center_point, right_radius)
 
 
 def find_center_point(coord_array):
