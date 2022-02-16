@@ -27,19 +27,19 @@
     <img src="images/logo.png" alt="Logo" width="128" height="128">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Points coverage</h3>
 
   <p align="center">
-    project_description
+    About the project:
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/DmitrTRC/ARS_CW.git"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/DmitrTRC/ARS_CW.git">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/DmitrTRC/ARS_CW.git/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/DmitrTRC/ARS_CW.git/issues">Request Feature</a>
   </p>
 </div>
 
