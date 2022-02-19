@@ -36,6 +36,11 @@ def get_distance(p1, p2):
 
 
 def find_circle(coord_array):
+    """
+    Find the circle that covers the points
+    :param coord_array: array of Point
+    :return Circle
+    """
     virtual_center_point = find_center_point(coord_array)
     center_point = find_nearest_point(coord_array, virtual_center_point)
     far_point = find_far_point(coord_array, center_point)
@@ -52,19 +57,10 @@ def cover_by_circles(point_array):
 
     left, right = split_set_by_point(point_array, center_point)
 
-    v_left_center_point = find_center_point(left)  # Find Virtual Center Point of the left set
-    v_right_center_point = find_center_point(right)  # Find Virtual Center Point of the right set
+    circle1 = find_circle(left)
+    circle2 = find_circle(right)
 
-    left_center_point = find_nearest_point(left, v_left_center_point)  # Find the nearest point to the virtual center
-
-    right_center_point = find_nearest_point(right, v_right_center_point)
-
-    left_radius = get_distance(find_far_point(left, left_center_point),
-                               left_center_point)  # Find the radius of the left circle
-    right_radius = get_distance(find_far_point(right, right_center_point),
-                                right_center_point)  # Find the radius of the right circle
-
-    return Circle(left_center_point, left_radius), Circle(right_center_point, right_radius)
+    return circle1, circle2
 
 
 def find_center_point(coord_array):
