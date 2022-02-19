@@ -35,6 +35,14 @@ def get_distance(p1, p2):
     return ((p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2) ** 0.5
 
 
+def find_circle(coord_array):
+    virtual_center_point = find_center_point(coord_array)
+    center_point = find_nearest_point(coord_array, virtual_center_point)
+    far_point = find_far_point(coord_array, center_point)
+    radius = get_distance(far_point, center_point)
+    return Circle(center_point, radius)
+
+
 def cover_by_circles(point_array):
     """
     point_array : array of Coord
