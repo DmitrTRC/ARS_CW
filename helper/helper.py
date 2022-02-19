@@ -50,7 +50,7 @@ def find_circle(coord_array):
 
 def cover_by_circles(point_array):
     """
-    point_array : array of Coord
+    point_array : array of Point
     Return the two circles that cover the points
     """
     center_point = find_center_point(point_array)
