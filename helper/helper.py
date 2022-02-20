@@ -1,12 +1,9 @@
 from functools import reduce
-from itertools import count
 
 
 class Point:
-    _ids = count(0)
 
     def __init__(self, x, y):
-        self.id = next(self._ids)  # Increase id counter
         self.x = x
         self.y = y
 
