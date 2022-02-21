@@ -13,3 +13,4 @@ def test_get_distance():
     assert get_distance(Point(1, 1), Point(2, 2)) == sqrt(2)
     assert get_distance(Point(1, 1), Point(3, 3)) == sqrt(8)
     assert get_distance(Point(1, 1), Point(4, 4)) == sqrt(18)
+
