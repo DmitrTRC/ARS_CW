@@ -16,7 +16,7 @@ def test_get_distance():
 
 
 def test_cover_by_circles():
-    TEST_DB = {
+    db = {
         'points': [
             Point(1, 1),
             Point(2, 2),
@@ -28,8 +28,8 @@ def test_cover_by_circles():
             Point(8, 8)
             ]
         }
-    c1, c2 = cover_by_circles(TEST_DB.get('points'))
+    c1, c2 = cover_by_circles(db.get('points'))
     assert c1.radius == sqrt(8)
-    assert c2.radius == sqrt(18)
-    assert c1.center == Point(-3, -5)
-    assert c2.center == Point(3, 1)
+    assert c2.radius == sqrt(8)
+    assert c1.center.x, c1.center.y == (2, 2)
+    assert c2.center.x, c2.center.y == (7, 7)
