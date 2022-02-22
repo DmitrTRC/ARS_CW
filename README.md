@@ -27,7 +27,7 @@
   </a>
 
 <h3 align="center">Points coverage</h3>
-
+![example workflow](https://github/workflow/status/:user/:repo/:workflow)
   <p align="center">
     About the project:
     <br />
@@ -217,5 +217,5 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
 [issues-url]: https://github.com/github_username/repo_name/issues
 [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/DmitrTRC/ARS_CW/blob/master/LICENSE.txt
+[license-url]: https://github.com/DmitrTRC/ARS_CW/blob/master/LICENSE
 [product-screenshot]: images/screenshot.png
