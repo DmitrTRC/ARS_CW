@@ -146,12 +146,13 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] Base logic implementation
+- [ ] Drawer implementation
+- [ ] CI/CD implementation
+    - [ ] Github Actions
+    - [ ] Docker
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/DmitrTRC/ARS_CW/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -210,12 +211,12 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/DmitrTRC/ARS_CW.svg?style=for-the-badge
 [contributors-url]: https://github.com/DmitrTRC/ARS_CW/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/DmitrTRC/ARS_CW?style=for-the-badge
 [forks-url]: https://github.com/github_username/repo_name/network/members
 [stars-shield]: https://img.shields.io/github/stars/DmitrTRC/ARS_CW.svg?style=for-the-badge
 [stars-url]: https://github.com/DmitrTRC/ARS_CW/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/DmitrTRC/ARS_CW?style=for-the-badge
+[issues-url]: https://github.com/DmitrTRC/ARS_CW/issues
+[license-shield]: https://img.shields.io/github/license/DmitrTRC/ARS_CW?style=for-the-badge
 [license-url]: https://github.com/DmitrTRC/ARS_CW/blob/master/LICENSE
 [product-screenshot]: images/screenshot.png
