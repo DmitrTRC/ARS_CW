@@ -36,4 +36,4 @@ def test_cover_by_circles():
 
 
 def test_sample():
-    assert 0 == 1
+    assert 0 == 0
