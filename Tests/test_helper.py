@@ -20,7 +20,7 @@ def test_cover_by_circles():
         'points': [
             Point(1, 1),
             Point(2, 2),
-            Point(3, 3),
+            Point(3,3),
             Point(4, 4),
             Point(5, 5),
             Point(6, 6),
