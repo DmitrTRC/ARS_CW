@@ -34,6 +34,8 @@ def test_cover_by_circles():
     assert c1.center.x, c1.center.y == (2, 2)
     assert c2.center.x, c2.center.y == (7, 7)
 
-
+def test_arina():
+    assert True
+    
 def test_sample():
     assert 0 == 0
