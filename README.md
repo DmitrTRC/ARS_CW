@@ -107,15 +107,10 @@ running follow these simple example steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/DmitrTRC/ARS_CW.git
    ```
 2. Install NPM packages
-   ```sh
-   npm install
-   ```
-3. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+   `pip install
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -126,8 +121,7 @@ running follow these simple example steps.
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos
-work well in this space. You may also link to more resources.
+used in the educational process
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
@@ -186,23 +180,14 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Your Name - [DmitrTRC,Arseniy](https://twitter.com/twitter_handle) - dmmorozov@gmail.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-
-## Acknowledgments
-
-* []()
-* []()
-* []()
+Project Link: [https://github.com/DmitrTRC/ARS_CW.git](https://github.com/DmitrTRC/ARS_CW.git)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+
+
 
 
 
